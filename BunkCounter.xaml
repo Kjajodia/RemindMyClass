@@ -1,0 +1,45 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Remindmyclass.BunkCounter"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="696" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="154"/>
+            <RowDefinition Height="614*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Background="#FF2D1D1D">
+            <TextBlock FontSize="48" Foreground="#FFEB2828" Height="80" Name="ApplicationTitle" Opacity="0.89" Style="{StaticResource PhoneTextNormalStyle}" Text="College Reminder" />
+            <TextBlock FontSize="32" Foreground="#FFD85050" Height="47" Name="PageTitle" Style="{StaticResource PhoneTextTitle1Style}" Text="Store Your Attendance" />
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Background="#FF2D1D1D">
+            <RadioButton Content="I am attending college today" Height="72" HorizontalAlignment="Left" Margin="28,74,0,0" Name="radioButton1" VerticalAlignment="Top" Width="381" FontFamily="Bookman Old Style" Checked="radioButton1_Checked" />
+            <RadioButton Content="Bunking" Height="72" HorizontalAlignment="Left" Margin="28,209,0,0" Name="Bunking" VerticalAlignment="Top" Width="399" FontFamily="Kristen ITC" Background="#BFFFFFFF" Checked="Bunking_Checked" />
+            <RadioButton Content="Today is a holiday" Height="72" HorizontalAlignment="Left" Margin="28,347,0,0" Name="Holiday" VerticalAlignment="Top" Width="399" FontFamily="Jing Jing" Background="#BFFFFFFF" Checked="Holiday_Checked" />
+            <TextBlock Height="144" HorizontalAlignment="Left" Margin="28,442,0,0" Name="textBox1" Text="" VerticalAlignment="Top" Width="416" />
+        </Grid>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/icons/appbar.sync.rest.png" Text="Show Attedance" Click="ApplicationBarIconButton_Click"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>
